@@ -8,30 +8,13 @@ import htmlContent from './content.json';
 import './App.css';
 
 function App (){
-  // constructor(props){
-  //   super(props);
-  //   this.state= {
-  //     htmlHeader:'',
-  //     contentTitle:'',
-  //     contentDescription:'',
-  //     contentArray:'',
-  //     nextPageLink:''
-  //   }
-  // }
+  
   const [htmlHeader,setHtmlHeader]=useState('');
   const [contentDescription, setContentDescription]=useState('');
   const [contentIndex,setContentIndex]=useState('');
   const [nextPageLink,setNextPageLink]=useState('');
 
-  // componentDidMount(){
-  //   const initialContentArray=0;
-  //   this.setState({
-  //     htmlHeader:htmlContent.title,
-  //     contentDescription:htmlContent.content[initialContentArray].description,
-  //     contentArray:initialContentArray,
-  //     nextPageLink:htmlContent.content[(initialContentArray+1)].title
-  //   })
-  // }
+  
 
   useEffect(()=>{
         const initialContentIndex=0;
@@ -73,11 +56,8 @@ function App (){
           <div className='header-image' style={{backgroundImage:`url(${iconFile})`
           }}
           />
-
           <div>{htmlHeader}</div>
-        </div>
-        
-            
+        </div>   
           <div className="arrow-up"></div>
         </header>
         <div className='App-main'>

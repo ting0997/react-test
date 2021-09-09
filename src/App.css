@@ -12,7 +12,6 @@
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(239,237,215,255) 0%, rgba(199,199,165,255) 100%);
   padding: 50px 50px 50px 50px;
   display:flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-radius: 15px 15px 0 0;

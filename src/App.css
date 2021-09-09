@@ -37,28 +37,6 @@
 }
 
 
-/* .App-title .file-icon {
-  width:60px;
-  height:80px;
-  border-bottom:50px solid #508c0d;
-  border-left: 30px solid #508c0d;
-  border-radius: 2px;
-  
-}
-
-
-.App-title .file-icon::after {
-  position:absolute;
-  content:'';
-  width:0;
-  height:0;
-  left:144px;
-  border-bottom: 13px solid #508c0d;
-  border-left:13px solid #508c0d;
-  border-top: 13px solid transparent;
-  border-right: 13px solid transparent;
-} */
-
 .App-header .arrow-up {
   width: 0; 
   height: 0; 

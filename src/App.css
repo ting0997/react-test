@@ -1,42 +1,37 @@
-
-*{
+* {
   box-sizing: border-box;
-  margin:10px;
+  margin: 10px;
 }
 .App {
   display: flex;
   flex-direction: column;
 }
-.App .App-header{
-  font-size: 2.5rem;
+.App .App-header {
+  font-size: 50px;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(239,237,215,255) 0%, rgba(199,199,165,255) 100%);
-  padding: 50px 50px 50px 50px;
-  display:flex;
+  padding: 50px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px 0;
 }
 @media all and (max-width: 500px) {
   .App .App-header  {
     flex-direction: column;
-    padding: 10px 10px 10px 10px;}
+    padding: 10px ;
   }
+}
 .App .App-header .App-title{
   display: flex;
   align-items: center;
-  justify-content: space-between; 
-  
+  justify-content: space-between;   
 }
 .header-image {
   width:80px;
   height: 80px;
   background-size: cover;
   background-position: center;
-
 }
-
-
 .App-header .arrow-up {
   width: 0; 
   height: 0; 
@@ -44,36 +39,32 @@
   border-right: 10px solid transparent;
   border-bottom: 10px solid #508c0d;
 }
-
-
-
-.App .App-footer{
-  display:flex;
+.App .App-footer {
+  display: flex;
   flex-direction: row;
-  order:4;
+  order: 4;
   justify-content: space-between;
   cursor: pointer;
-  color:#508c0d;
+  color: #508c0d;
   text-decoration: underline;
-  font-size:1.5rem;  
+  font-size: 30px;  
 }
 @media all and (max-width: 500px) {
   .App .App-footer {
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     cursor: pointer;
-    color:#508c0d;
+    color: #508c0d;
     text-decoration: underline;
-    font-size:1.5rem; 
+    font-size: 30px; 
   }
-  }
+}
 .App-footer .back-options{
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content:flex-start; 
-  
+  justify-content: flex-start;  
 }
 .App-footer .arrow-left {
   width: 0px; 
@@ -97,8 +88,6 @@
   border-bottom: 20px solid transparent;
   border-left: 30px solid #508c0d;
 }
-
-
 .App-main{
   min-width: 50%;
   flex: 1 1 auto;
@@ -106,29 +95,23 @@
   align-items: center;
   justify-content: center;
   border: 1px solid white;
-  margin: 0 7.5px 15px;
-  
+  margin: 0 7.5px 15px;  
 }
 @media all and (max-width: 500px) {
   .App-main {
-    flex-direction: column;}
+    flex-direction: column;
   }
-
-  
-
+}
 .App-main>.App-image {
   width: 350px;
   height: 350px;
   background-size: cover;
   background-position: center;
-  order:2
-
+  order: 2
 }
-
-.App-main>.App-text {
+.App-main > .App-text {
   width: 70%;
-  order:3;
- 
+  order: 3;
 }
 
 

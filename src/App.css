@@ -10,24 +10,25 @@
   font-size: 50px;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(239,237,215,255) 0%, rgba(199,199,165,255) 100%);
   padding: 50px;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px 0;
+  border-radius: 15px 15px 0 0;
 }
 @media all and (max-width: 500px) {
   .App .App-header  {
     flex-direction: column;
-    padding: 10px ;
+    padding: 10px;
   }
 }
-.App .App-header .App-title{
+.App .App-header .App-title {
   display: flex;
   align-items: center;
-  justify-content: space-between;   
+  justify-content: space-between;  
 }
 .header-image {
-  width:80px;
+  width: 80px;
   height: 80px;
   background-size: cover;
   background-position: center;
@@ -102,7 +103,7 @@
     flex-direction: column;
   }
 }
-.App-main>.App-image {
+.App-main > .App-image {
   width: 350px;
   height: 350px;
   background-size: cover;
@@ -113,5 +114,3 @@
   width: 70%;
   order: 3;
 }
-
-

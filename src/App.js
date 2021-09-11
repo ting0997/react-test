@@ -55,6 +55,7 @@ function App() {
         </div>
         <div className="arrow-up"/>
       </header>
+      
       <div className="App-main">
         <div
           className="App-image"

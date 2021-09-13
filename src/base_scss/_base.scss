@@ -1,0 +1,6 @@
+$primary-color: #508c0d;
+
+@mixin small__media {
+    flex-direction: column;
+    align-items: center;
+}

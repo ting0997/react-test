@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import ipadMini from "./ipad-mini.jpg";
-import iconFile from "./icons-file.svg";
 import htmlContent from "./content.json";
-import "./App.css";
+import styles from "./App.module.scss";
+import Header from "../src/component/header/header";
+import Footer from "../src/component/footer/footer";
+import Main from "../src/component/main/main";
 
 function App() {
   const [htmlHeader, setHtmlHeader] = useState("");
   const [contentDescription, setContentDescription] = useState("");
-  const [contentIndex, setContentIndex] = useState("");
+  const [contentIndex, setContentIndex] = useState(0);
   const [nextPageLink, setNextPageLink] = useState("");
+  const [previousPageLink, setPreviousPageLink] = useState("");
 
   useEffect(() => {
     const initialContentIndex = 0;
@@ -16,6 +18,7 @@ function App() {
     setContentDescription(htmlContent.content[initialContentIndex].description);
     setContentIndex(initialContentIndex);
     setNextPageLink(htmlContent.content[initialContentIndex + 1].title);
+    setPreviousPageLink("This is the first page");
   }, []);
 
   const handleClick = () => {
@@ -27,55 +30,47 @@ function App() {
       );
       setContentIndex(currentContentIndex);
       setNextPageLink(htmlContent.content[currentContentIndex + 1].title);
+      setPreviousPageLink(htmlContent.content[currentContentIndex - 1].title);
     } else if (currentContentIndex === totalContentLength - 1) {
+      setContentDescription(
+        htmlContent.content[currentContentIndex].description
+      );
+      setContentIndex(currentContentIndex);
       setNextPageLink("This is the last page");
+      setPreviousPageLink(htmlContent.content[currentContentIndex - 1].title);
     }
   };
 
   const handleClickBack = () => {
     const currentContentIndex = contentIndex - 1;
-    if (currentContentIndex >= 0) {
+    console.log(currentContentIndex);
+    if (currentContentIndex > 0) {
       setContentDescription(
         htmlContent.content[currentContentIndex].description
       );
       setContentIndex(currentContentIndex);
       setNextPageLink(htmlContent.content[currentContentIndex + 1].title);
+      setPreviousPageLink(htmlContent.content[currentContentIndex - 1].title);
+    } else if (currentContentIndex === 0) {
+      setContentDescription(
+        htmlContent.content[currentContentIndex].description
+      );
+      setContentIndex(currentContentIndex);
+      setNextPageLink(htmlContent.content[currentContentIndex + 1].title);
+      setPreviousPageLink("This is the first page");
     }
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="App-title">
-          <div
-            className="header-image"
-            style={{ backgroundImage: `url(${iconFile})` }}
-          />
-          <div>{htmlHeader}</div>
-        </div>
-        <div className="arrow-up"/>
-      </header>
-      
-      <div className="App-main">
-        <div
-          className="App-image"
-          style={{ backgroundImage: `url(${ipadMini})` }}
-        />
-        <section className="App-text">
-          <div dangerouslySetInnerHTML={{ __html: `${contentDescription}` }} />
-        </section>
-      </div>
-
-      <footer className="App-footer">
-        <div className="back-options" onClick={handleClickBack}>
-          <div className="arrow-left"/>
-          {contentIndex ? "Back" : "This is the first page"}
-        </div>
-        <div className="previous-options" onClick={handleClick}>
-          {nextPageLink}
-          <div className="arrow-right"/>
-        </div>
-      </footer>
+    <div className={styles.App}>
+      <Header header={htmlHeader} />
+      <Main contentDescription={contentDescription} />
+      <Footer
+        handleClick={handleClick}
+        handleClickBack={handleClickBack}
+        previousPageLink={previousPageLink}
+        nextPageLink={nextPageLink}
+      />
     </div>
   );
 }

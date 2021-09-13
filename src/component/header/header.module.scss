@@ -1,0 +1,38 @@
+@import '../../base_scss/base' ;
+
+.header {
+    font-size: 50px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(239,237,215,255) 0%, rgba(199,199,165,255) 100%);
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+
+    .header__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;  
+    }  
+
+    .header__image {
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header__arrowup {
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $primary-color;
+    }
+    @media  (max-width: 500px) {
+        @include small__media;
+        padding: 10px;
+        font-size: 20px;   
+    }
+}

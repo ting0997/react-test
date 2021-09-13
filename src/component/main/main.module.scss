@@ -1,0 +1,28 @@
+@import '../../base_scss/base' ;
+
+.main{
+    min-width: 50%;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    margin: 0 7.5px 15px;
+
+    .main__image {
+        width: 350px;
+        height: 350px;
+        background-size: cover;
+        background-position: center;
+        order: 2
+    }
+    
+    .main__text {
+        width: 70%;
+        order: 3;
+    }
+
+    @media (max-width: 500px) {
+        @include small__media;   
+    }
+}

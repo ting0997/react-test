@@ -1,0 +1,57 @@
+@import '../../base_scss/base' ;
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    order: 4;
+    justify-content: space-between;
+    cursor: pointer;
+    color: $primary-color;
+    text-decoration: underline;
+    font-size: 30px;  
+
+    .footer__backoptions {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;  
+    }
+
+    .footer__arrowleft {
+        width: 0px; 
+        height: 0px; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 30px solid $primary-color;
+    }
+
+    .footer__previousoptions {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; 
+    }
+
+    .footer__arrowright {
+        width: 0px; 
+        height: 0px; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid #508c0d;
+    }
+
+    @media (max-width: 500px) {
+        @include small__media;
+        text-decoration: underline;
+        font-size: 20px;
+        padding: 5px; 
+        .footer__previousoptions {
+            width: 100%
+        } 
+        .footer__backoptions {
+            width: 100%
+        }
+    }
+}
